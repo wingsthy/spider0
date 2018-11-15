@@ -1,0 +1,14 @@
+import Queue
+import threading
+
+URL_LIST_FILE=''
+OUTPUT_DIRECTORY=''
+MAX_DEPTH=''
+CRAWL_TIMEOUT=0
+CRAWL_INTERVAL=0
+TARGET_URL=''
+THREAD_COUNT=0
+
+LOCK = threading.Lock()
+URL_QUEUE = Queue.Queue()
+CRAWL_URLS = set()
