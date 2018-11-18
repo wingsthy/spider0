@@ -96,7 +96,19 @@ def main():
 
     threads = []
 
+    for i in xrange(global_value.THREAD_COUNT):
+        spider_thread = SpiderThread(url_queue, lock, crawed_urls)
+        threads.append(spider_thread)
+        spider_thread.start()
+        logging.info("starting spider thread...")
 
+        for thread in threads:
+            thread.join()
+        logging.info("spider work is done!")
+
+if __name__ == "__main__":
+    main()
+    
 
 
 
